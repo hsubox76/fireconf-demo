@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "name": "fireconf-preact-demo",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "start": "webpack-dev-server",
+    "click": "node scripts/click.js --latencyRange 0-500 --downloadSpeedRange 400-50000",
+    "demo2": "node scripts/launch.js --url https://exchange-rates-adcf6.firebaseapp.com/full https://exchange-rates-adcf6.firebaseapp.com/split --timeout 5000 --no-mobile",
+    "demo": "node scripts/launch.js --url https://exchange-rates-adcf6.firebaseapp.com/full https://exchange-rates-adcf6.firebaseapp.com/split https://exchange-rates-adcf6.firebaseapp.com/dynamic --timeout 5000 --no-mobile",
+    "demo:local": "node scripts/launch.js --url http://localhost:8080/full http://localhost:8080/split http://localhost:8080/dynamic --timeout 5000 --no-mobile"
+  },
+  "author": "",
+  "dependencies": {
+    "@firebase/app": "^0.4.1",
+    "@firebase/app-types": "^0.4.0",
+    "@firebase/logger": "^0.1.14",
+    "firebase": "^6.0.2",
+    "first-input-delay": "^0.1.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "compression-webpack-plugin": "^2.0.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "firebase-admin": "^8.4.0",
+    "puppeteer": "^1.19.0",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "webpack": "^4.29.1",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.3.1"
+  }
+}
