@@ -1,22 +1,9 @@
-# fireconf-preact-demo
+# fireconf-demo
 
-## CLI Commands
+Fake "stock market" app to demonstrate how to improve performance of a
+Firebase web app, created for Firebase Summit 2019.
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# test the production build locally
-npm run serve
-
-# run tests with jest and preact-render-spy 
-npm run test
-```
-
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
+## Key Files
+- [full.js](src/full.js) - Naive implementation that imports full Firebase all-in-one package.
+- [split.js](src/split.js) - Imports only necessary Firebase components (Firestore and Performance) - halves the bundle size.
+- [dynamic.js](src/dynamic.js) - Fetches initial data with REST call and then dynamically imports Firebase libraries.
