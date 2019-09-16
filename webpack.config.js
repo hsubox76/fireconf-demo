@@ -95,5 +95,5 @@ module.exports = [
   getConfig("split"),
   getConfig("dynamic"),
   getConfig("full-split", /* CHANGE WHEN UPDATING VERSION */ "full"),
-  getConfig("full-split-dynamic", /* CHANGE WHEN UPDATING VERSION */ "full")
+  getConfig("full-split-dynamic", /* CHANGE WHEN UPDATING VERSION */ "split")
 ];

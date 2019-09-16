@@ -1,9 +1,11 @@
-import firebase from "firebase"; // Firebase all-in-one package
-import { firebaseConfigFullSplitDynamic as firebaseConfig } from "./shared/firebase-config";
+import firebase from "firebase/app"; // Firebase core
+import "firebase/firestore";
+import "firebase/performance";
+import { firebaseConfigSplit as firebaseConfig } from "./shared/firebase-config";
 import { renderPage, logPerformance } from "./shared/helpers";
 
 // STEPS
-// 1) Import Firebase
+// 1) Import Firebase components
 // 2) Subscribe to Firestore
 // 3) Render data
 
@@ -13,7 +15,7 @@ let firstLoad = false;
 
 // Subscribe to stock data from Firestore and render page on updates.
 subscribeToFirestore((stockData) => renderPage({
-  title: "3 Version Sequence",
+  title: "3 Version Sequence: Importing Firestore and Perf Only",
   tableData: stockData
 }));
 
