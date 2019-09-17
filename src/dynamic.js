@@ -10,14 +10,12 @@ const COLLECTION_URL =
 
 
 
-
-
-
+  
 
 // STEPS
 // 1) Fetch REST data
 // 2) Render data
-// 3) Import Firebase components
+// 3) Dynamically import Firebase components
 // 4) Subscribe to Firestore
 
 
@@ -26,13 +24,14 @@ const COLLECTION_URL =
 
 
 // HTTP GET from Firestore REST endpoint.
-fetch(COLLECTION_URL).then(res => res.json())
+fetch(COLLECTION_URL)
+  .then(res => res.json())
   .then(json => {
     // Format JSON data into a tabular format.
     const stocks = formatJSONStocks(json);
 
     // Measure time between navigation start and now (first data loaded)
-    performance && performance.measure('initialDataLoadTime');
+    performance && performance.measure("initialDataLoadTime");
 
     // Render using initial REST data.
     renderPage({
@@ -48,22 +47,24 @@ fetch(COLLECTION_URL).then(res => res.json())
     });
   });
 
-
-
-
-
-
-
-
 /**
  * FUNCTIONS
  */
 
 // Dynamically imports firebase/app, firebase/firestore, and firebase/performance.
 function dynamicFirebaseImport() {
-  const appImport = import(/* webpackChunkName: "firebase-app-dynamic" */ "firebase/app");
-  const firestoreImport = import(/* webpackChunkName: "firebase-firestore-dynamic" */"firebase/firestore");
-  const performanceImport = import(/* webpackChunkName: "firebase-performance-dynamic" */"firebase/performance");
+  const appImport = import(
+    /* webpackChunkName: "firebase-app-dynamic" */
+    "firebase/app"
+  );
+  const firestoreImport = import(
+    /* webpackChunkName: "firebase-firestore-dynamic" */
+    "firebase/firestore"
+  );
+  const performanceImport = import(
+    /* webpackChunkName: "firebase-performance-dynamic" */
+    "firebase/performance"
+  );
   return Promise.all([appImport, firestoreImport, performanceImport]).then(
     ([dynamicFirebase]) => {
       return dynamicFirebase;
@@ -79,7 +80,7 @@ function subscribeToFirestore(firebase) {
     .onSnapshot(snap => {
       if (!firstLoad) {
         // Measure time between navigation start and now (first data loaded)
-        performance && performance.measure('realtimeDataLoadTime');
+        performance && performance.measure("realtimeDataLoadTime");
         // Log to console for internal development
         logPerformance();
         firstLoad = true;

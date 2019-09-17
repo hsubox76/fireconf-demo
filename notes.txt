@@ -1,2 +1,2 @@
 GET "current" collection from Firestore
-"https://firestore.googleapis.com/v1/projects/exchange-rates-adcf6/databases/(default)/documents/current"
+https://firestore.googleapis.com/v1/projects/exchange-rates-adcf6/databases/(default)/documents/current
