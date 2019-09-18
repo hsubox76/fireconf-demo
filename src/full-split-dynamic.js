@@ -1,7 +1,7 @@
 import firebase from "firebase/app"; // Firebase core
 import "firebase/firestore";
 import "firebase/performance";
-import { firebaseConfigSplit as firebaseConfig } from "./shared/firebase-config";
+import { firebaseConfigFullSplitDynamic as firebaseConfig } from "./shared/firebase-config";
 import { renderPage, logPerformance } from "./shared/helpers";
 
 // STEPS
