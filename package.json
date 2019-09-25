@@ -8,9 +8,9 @@
     "build": "webpack",
     "start": "webpack-dev-server",
     "click": "node scripts/click.js --latencyRange 0-500 --downloadSpeedRange 400-50000",
-    "demo2": "node scripts/launch.js --url https://exchange-rates-adcf6.firebaseapp.com/full https://exchange-rates-adcf6.firebaseapp.com/split --timeout 5000 --no-mobile",
+    "demo2": "node scripts/launch.js --url https://exchange-rates-adcf6.firebaseapp.com/full https://exchange-rates-adcf6.firebaseapp.com/split --timeout 10000 --no-mobile",
     "demo": "node scripts/launch.js --url https://exchange-rates-adcf6.firebaseapp.com/full https://exchange-rates-adcf6.firebaseapp.com/split https://exchange-rates-adcf6.firebaseapp.com/dynamic --timeout 5000 --no-mobile",
-    "demo:local": "node scripts/launch.js --url http://localhost:8080/full http://localhost:8080/split http://localhost:8080/dynamic --timeout 5000 --no-mobile"
+    "demo:local": "node scripts/launch.js --url http://localhost:8080/full http://localhost:8080/split http://localhost:8080/dynamic --timeout 10000 --no-mobile"
   },
   "author": "",
   "dependencies": {

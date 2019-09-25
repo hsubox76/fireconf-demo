@@ -101,6 +101,7 @@
  
    const browser = await puppeteer.launch({
      headless: false,
+     executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
      args: [
        `--window-size=${DEFAULT_VIEWPORT.width},${DEFAULT_VIEWPORT.height}`,
        CENTER_WINDOWS_ON_SCREEN ? `--window-position=${x},${y}` : `--window-position=${dx},0`,

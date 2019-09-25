@@ -25,7 +25,7 @@ exports.updateTest = functions.https.onRequest(async (request, response) => {
   });
 });
 
-exports.updateStocks = functions.pubsub.schedule('every 5 minutes').onRun(async (context) => {
+exports.updateStocks = functions.pubsub.schedule('every 1 minutes').onRun(async (context) => {
   const stockMap = {};
   const currentDataRef = admin.firestore().doc('metadata/currentData');
   const currentDataSnap = await currentDataRef.get();
